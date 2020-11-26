@@ -37,9 +37,9 @@ class PriorityQueue():
         """
 
         item = (value, priority) # creating a tuple of item with value and priority
+        self.queue.append(item)
+        
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
 
     def get_highest_priority(self):
         """
@@ -51,9 +51,30 @@ class PriorityQueue():
 
         :return: value with highest priority
         """
+        item = self.queue
+        PopedItem = 0
+        count = 0
+        prior1 = 0
+        prior2 = 0
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
+        for i in item:
+##            print(i)
+            if i[1]>count:
+                count = i[1]
+                PopedItem = i
+##                print(count)
+
+            elif i[1] == count:
+                prior1 = PopedItem
+                prior2 = i
+##                print(prior1)
+##                print(prior2)
+
+        if prior1 == 0 and prior2 == 0:
+            print("highest priority item has the value " +str(PopedItem[0]) + " and priority " + str(PopedItem[1]) + ".")
+        else:
+            print("highest priority item has the value " +str(prior1[0]) + " and priority " + str(prior1[1]) + ".")
+        
 
     def delete_highest_priority(self):
         """
@@ -64,9 +85,30 @@ class PriorityQueue():
 
         :return: None
         """
+        item = self.queue
+        PopedItem = 0
+        count = 0
+        prior1 = 0
+        prior2 = 0
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
+        for i in item:
+##            print(i)
+            if i[1]>count:
+                count = i[1]
+                PopedItem = i
+##                print(count)
+
+            elif i[1] == count:
+                prior1 = PopedItem
+                prior2 = i
+##                print(prior1)
+##                print(prior2)
+        if prior1 == 0 and prior2 == 0:
+            item.remove(prior1)
+        else:
+            item.remove(PopedItem)
+
+        print(item)
 
     ######## Helper functions below ################
 
@@ -81,5 +123,11 @@ if __name__ == "__main__":
     and see whether your results follow the FIFO (First In First Out)
     """
 
-    # enter your code below
-    pass # remove this line once you start filling in the code
+    PriorityQueue = PriorityQueue()
+    PriorityQueue.insert("jam", 2)
+    PriorityQueue.insert("areeba", 3)
+    PriorityQueue.insert("shaleem", 1)
+    PriorityQueue.insert("ayub", 3)
+    PriorityQueue.get_highest_priority()
+    PriorityQueue.delete_highest_priority()
+
