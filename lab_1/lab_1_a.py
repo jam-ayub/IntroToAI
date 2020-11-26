@@ -31,8 +31,8 @@ class Queue():
         return: None
         """
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
+        self.queue.append(value)
+        print(self.queue)
 
     def dequeue(self):
         """
@@ -41,8 +41,9 @@ class Queue():
         :return: value from the queue
         """
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
+        pop = self.queue[0]
+        self.queue.remove(pop)
+        return pop
 
     def front(self):
         """
@@ -51,9 +52,9 @@ class Queue():
         :return: front element from queue
         """
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
-
+        get = self.queue[0]
+        return get
+        
     def rear(self):
         """
         Get the last item form the queue.
@@ -61,8 +62,9 @@ class Queue():
         :return: last element from queue
         """
 
-        # enter your code below
-        pass # remove this line once you start filling in the code
+        get = self.queue[-1]
+        return get
+
 
     ######## Helper functions below ################
 
@@ -77,5 +79,12 @@ if __name__ == "__main__":
     and see whether your results follow the FIFO (First In First Out)
     """
 
-    # enter your code below
-    pass # remove this line once you start filling in the code
+    Queue = Queue()
+    Queue.enqueue(1)
+    Queue.enqueue(2)
+    Queue.enqueue(3)
+    print(Queue.dequeue())
+    print(Queue.front())
+    Queue.enqueue(4)
+    Queue.enqueue(5)
+    print(Queue.rear())
